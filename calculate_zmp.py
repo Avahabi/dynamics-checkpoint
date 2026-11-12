@@ -199,7 +199,7 @@ def build_motion_states() -> list[dict]:
         previous_p = momentum
         previous_l = angular_momentum
 
-        zmp = np.asarray(calc_zmp(com, d_p, d_l, mass, 0.0), dtype=float).ravel()
+        zmp = np.asarray(calc_zmp(mass, GRAVITY, com, d_p, d_l, 0.0), dtype=float).ravel()
         if zmp.size == 2:
             zmp = np.array([zmp[0], zmp[1], 0.0])
 
